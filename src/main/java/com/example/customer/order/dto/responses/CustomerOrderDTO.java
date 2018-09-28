@@ -40,7 +40,6 @@ public class CustomerOrderDTO  extends BaseDTO implements Serializable{
 	String transactionName;
 	String refField1;
 	String refField2;
-	Date updatedDttm;
 	String updatedBy;
 	List<CustomerOrderLineDTO> orderLines = new ArrayList<>();
 	
