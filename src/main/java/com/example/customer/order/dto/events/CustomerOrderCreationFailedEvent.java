@@ -1,33 +1,24 @@
-package com.example.order.dto.events;
+package com.example.customer.order.dto.events;
 
-import java.util.Map;
-
-import com.example.order.dto.responses.CustomerOrderDTO;
+import com.example.customer.order.dto.requests.CustomerOrderCreationRequestDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Value;
 
 @JsonAutoDetect(fieldVisibility = Visibility.ANY)
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 @NoArgsConstructor
 @Data
-public class CustomerOrderAllocatedEvent extends BaseEvent {
-	private CustomerOrderDTO customerOrderDTO;
-	private static String EVENT_NAME = "CustomerOrderAllocatedEvent";
-	public CustomerOrderAllocatedEvent(CustomerOrderDTO customerOrderDTO) {
-		this(customerOrderDTO, null);
-	}
-
-	public CustomerOrderAllocatedEvent(CustomerOrderDTO orderDTO, Map headerMap) {
-		super(EVENT_NAME);
-		this.customerOrderDTO = orderDTO;
-		if(headerMap != null)
-			this.setHeaderMap(headerMap);
+public class CustomerOrderCreationFailedEvent extends ExceptionEvent{
+	public CustomerOrderCreationRequestDTO customerOrderDTO;
+	private static String EVENT_NAME = "CustomerOrderCreationFailedEvent";
+	
+	public CustomerOrderCreationFailedEvent(CustomerOrderCreationRequestDTO req, String errorMsg) {
+		super(EVENT_NAME, errorMsg);
+		this.customerOrderDTO = req;
 		this.addHeader("eventName", getEventName());
 		this.addHeader("busName", customerOrderDTO.getBusName());
 		this.addHeader("locnNbr", customerOrderDTO.getLocnNbr());
@@ -36,4 +27,5 @@ public class CustomerOrderAllocatedEvent extends BaseEvent {
 		this.addHeader("division", customerOrderDTO.getDivision());
 		this.addHeader("busUnit", customerOrderDTO.getBusUnit());
 	}
+
 }

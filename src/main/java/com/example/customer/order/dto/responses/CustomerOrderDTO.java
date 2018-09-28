@@ -1,31 +1,39 @@
-package com.example.order.dto.requests;
+package com.example.customer.order.dto.responses;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.example.inventory.dto.BaseDTO;
-import com.example.order.dto.events.ExceptionEvent;
+import com.example.customer.order.dto.BaseDTO;
+import com.example.customer.order.dto.events.ExceptionEvent;
+import com.example.customer.order.dto.requests.CustomerOrderLineCreationRequestDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 
 @JsonAutoDetect(fieldVisibility = Visibility.ANY)
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderCreationRequestDTO extends BaseDTO{
+public class CustomerOrderDTO  extends BaseDTO implements Serializable{
+	Long id;
 	String busName;
 	Integer locnNbr;
 	String company;
 	String division;
 	String busUnit;
 	String externalBatchNbr;
+	String batchNbr;
 	String orderNbr;
+	Integer statCode;
 	Date orderDttm;
 	Date shipByDttm;
 	Date expectedDeliveryDttm;
@@ -36,11 +44,16 @@ public class CustomerOrderCreationRequestDTO extends BaseDTO{
 	String transactionName;
 	String refField1;
 	String refField2;
-	String userId;
-	List<CustomerOrderLineCreationRequestDTO> orderLines;
+	Date updatedDttm;
+	String updatedBy;
+	List<CustomerOrderLineDTO> orderLines = new ArrayList<>();
 	
-	public void createHeaders() {
-		this.addHeader("eventName", "NewCustomerOrderEvent");
-	}
-}
 
+    public void addOrderLine(CustomerOrderLineDTO orderLineDTO) {
+    	orderLines.add(orderLineDTO);
+    }
+ 
+    public void removeOrderLine(CustomerOrderLineDTO orderLineDTO) {
+    	orderLines.remove(orderLineDTO);
+    }
+}

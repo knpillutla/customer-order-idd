@@ -1,8 +1,8 @@
-package com.example.order.dto.events;
+package com.example.customer.order.dto.events;
 
 import java.util.Map;
 
-import com.example.order.dto.responses.CustomerOrderDTO;
+import com.example.customer.order.dto.responses.CustomerOrderDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,7 +1,7 @@
-package com.example.order.dto.events;
+package com.example.customer.order.dto.events;
 
-import com.example.order.dto.requests.CustomerOrderLineStatusUpdateRequestDTO;
-import com.example.order.dto.responses.CustomerOrderDTO;
+import com.example.customer.order.dto.requests.CustomerOrderLineStatusUpdateRequestDTO;
+import com.example.customer.order.dto.responses.CustomerOrderDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;

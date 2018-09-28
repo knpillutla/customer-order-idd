@@ -1,8 +1,9 @@
-package com.example.order.dto.requests;
+package com.example.customer.order.dto.requests;
 
+import com.example.customer.order.dto.BaseDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,16 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderLineStatusUpdateRequestDTO {
-	Long id;
-	Long orderId;
-	String busName;
-	Integer locnNbr;
-	String orderNbr;
-	String company;
-	String division;
+public class CustomerOrderLineCreationRequestDTO  extends BaseDTO{
+	Integer orderLineNbr;
 	String itemBrcd;
-	String busUnit;
-	Integer qty;
-	Integer newStatus;
+	Integer origOrderQty;
+	Integer orderQty;
+	String refField1;
+	String refField2;
 }

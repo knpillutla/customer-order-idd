@@ -1,4 +1,4 @@
-package com.example.order.dto.events;
+package com.example.customer.order.dto.events;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;

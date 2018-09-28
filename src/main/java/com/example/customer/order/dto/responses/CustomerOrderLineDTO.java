@@ -1,11 +1,11 @@
-package com.example.order.dto.responses;
+package com.example.customer.order.dto.responses;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import com.example.inventory.dto.BaseDTO;
-import com.example.order.dto.events.ExceptionEvent;
-import com.example.order.dto.requests.CustomerOrderLineCreationRequestDTO;
+import com.example.customer.order.dto.BaseDTO;
+import com.example.customer.order.dto.events.ExceptionEvent;
+import com.example.customer.order.dto.requests.CustomerOrderLineCreationRequestDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
