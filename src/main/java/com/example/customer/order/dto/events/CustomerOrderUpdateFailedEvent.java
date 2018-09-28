@@ -1,15 +1,12 @@
 package com.example.customer.order.dto.events;
 
 import com.example.customer.order.dto.requests.CustomerOrderUpdateRequestDTO;
-import com.example.customer.order.dto.responses.CustomerOrderDTO;
+import com.example.util.dto.events.ExceptionEvent;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Value;
 
 @JsonAutoDetect(fieldVisibility = Visibility.ANY)
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
