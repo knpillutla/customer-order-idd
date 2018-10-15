@@ -1,8 +1,11 @@
-package com.example.customer.order.dto.requests;
+package com.threedsoft.customer.order.dto.responses;
 
-import com.example.util.dto.BaseDTO;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.threedsoft.util.dto.WMSResourceDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
@@ -14,11 +17,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderLineCreationRequestDTO  extends BaseDTO{
+public class CustomerOrderLineResourceDTO  extends WMSResourceDTO implements Serializable{
+	Long id;
+	Integer locnNbr;
+	Long orderId;
 	Integer orderLineNbr;
 	String itemBrcd;
 	Integer origOrderQty;
 	Integer orderQty;
+	Integer cancelledQty;
+	Integer shortQty;
+	Integer pickedQty;
+	Integer packedQty;
+	Integer shippedQty;
+	Integer statCode;
+	String olpn;
+	String source;
+	String transactionName;
 	String refField1;
 	String refField2;
+	LocalDateTime updatedDttm;
+	String updatedBy;
 }

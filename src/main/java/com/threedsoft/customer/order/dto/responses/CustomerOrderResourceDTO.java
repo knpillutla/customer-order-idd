@@ -1,13 +1,13 @@
-package com.example.customer.order.dto.responses;
+package com.threedsoft.customer.order.dto.responses;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.util.dto.BaseDTO;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.threedsoft.util.dto.WMSResourceDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderDTO  extends BaseDTO implements Serializable{
+public class CustomerOrderResourceDTO  extends WMSResourceDTO implements Serializable{
 	Long id;
 	String busName;
 	Integer locnNbr;
@@ -41,14 +41,14 @@ public class CustomerOrderDTO  extends BaseDTO implements Serializable{
 	String refField1;
 	String refField2;
 	String updatedBy;
-	List<CustomerOrderLineDTO> orderLines = new ArrayList<>();
+	List<CustomerOrderLineResourceDTO> orderLines = new ArrayList<>();
 	
 
-    public void addOrderLine(CustomerOrderLineDTO orderLineDTO) {
+    public void addOrderLine(CustomerOrderLineResourceDTO orderLineDTO) {
     	orderLines.add(orderLineDTO);
     }
  
-    public void removeOrderLine(CustomerOrderLineDTO orderLineDTO) {
+    public void removeOrderLine(CustomerOrderLineResourceDTO orderLineDTO) {
     	orderLines.remove(orderLineDTO);
     }
 }

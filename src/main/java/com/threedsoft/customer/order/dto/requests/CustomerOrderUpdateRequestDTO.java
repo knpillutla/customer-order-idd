@@ -1,7 +1,10 @@
-package com.example.customer.order.dto.requests;
+package com.threedsoft.customer.order.dto.requests;
+
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.threedsoft.util.dto.WMSRequestDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
@@ -13,16 +16,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderLineStatusUpdateRequestDTO {
+public class CustomerOrderUpdateRequestDTO extends WMSRequestDTO{
 	Long id;
-	Long orderId;
 	String busName;
 	Integer locnNbr;
-	String orderNbr;
 	String company;
 	String division;
-	String itemBrcd;
 	String busUnit;
-	Integer qty;
-	Integer newStatus;
+	String orderNbr;
+	LocalDateTime orderDttm;
+	LocalDateTime shipByDttm;
+	LocalDateTime expectedDeliveryDttm;
+	String deliveryType;
+	boolean isGift;
+	String giftMsg;
+	String source;
+	String transactionName;
+	String refField1;
+	String refField2;
+	String userId;
 }
