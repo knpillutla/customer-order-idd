@@ -14,16 +14,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class CustomerOrderLineStatusUpdateRequestDTO extends WMSRequestDTO {
+public class CustomerOrderLineUpdateRequestDTO extends WMSRequestDTO {
 	Long id;
 	Long orderId;
+	Integer orderLineNbr;
 	String busName;
 	Integer locnNbr;
-	String orderNbr;
-	String company;
-	String division;
 	String itemBrcd;
-	String busUnit;
-	Integer qty;
-	Integer newStatus;
+	Integer origOrderQty;
+	Integer orderQty;
+	String refField1;
+	String refField2;
+	String source;
+	String transactionName;
+	String userId;
 }

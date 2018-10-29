@@ -19,9 +19,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CustomerOrderLineResourceDTO  extends WMSResourceDTO implements Serializable{
 	Long id;
-	Integer locnNbr;
 	Long orderId;
 	Integer orderLineNbr;
+	String orderNbr;
+	String busName;
+	Integer locnNbr;
+	String company;
+	String division;
+	String busUnit;
 	String itemBrcd;
 	Integer origOrderQty;
 	Integer orderQty;
@@ -30,7 +35,7 @@ public class CustomerOrderLineResourceDTO  extends WMSResourceDTO implements Ser
 	Integer pickedQty;
 	Integer packedQty;
 	Integer shippedQty;
-	Integer statCode;
+	String status;
 	String olpn;
 	String source;
 	String transactionName;
@@ -38,4 +43,5 @@ public class CustomerOrderLineResourceDTO  extends WMSResourceDTO implements Ser
 	String refField2;
 	LocalDateTime updatedDttm;
 	String updatedBy;
+	Integer archived;
 }

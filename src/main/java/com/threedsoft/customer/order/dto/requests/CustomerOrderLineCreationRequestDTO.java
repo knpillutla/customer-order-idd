@@ -15,10 +15,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class CustomerOrderLineCreationRequestDTO  extends WMSRequestDTO{
+	String busName;
+	Integer locnNbr;
+	Long orderId;
 	Integer orderLineNbr;
 	String itemBrcd;
 	Integer origOrderQty;
 	Integer orderQty;
 	String refField1;
 	String refField2;
+	String source;
+	String transactionName;
+	String userId;
 }

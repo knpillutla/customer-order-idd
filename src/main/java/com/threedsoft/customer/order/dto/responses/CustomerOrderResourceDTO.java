@@ -29,7 +29,7 @@ public class CustomerOrderResourceDTO  extends WMSResourceDTO implements Seriali
 	String externalBatchNbr;
 	String batchNbr;
 	String orderNbr;
-	Integer statCode;
+	String status;
 	LocalDateTime orderDttm;
 	LocalDateTime shipByDttm;
 	LocalDateTime expectedDeliveryDttm;
@@ -41,6 +41,7 @@ public class CustomerOrderResourceDTO  extends WMSResourceDTO implements Seriali
 	String refField1;
 	String refField2;
 	String updatedBy;
+	Integer archived;
 	List<CustomerOrderLineResourceDTO> orderLines = new ArrayList<>();
 	
 
